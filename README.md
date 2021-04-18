@@ -1,6 +1,6 @@
 # Simplilearn Dockercoins
 
-[![ci](https://github.com/chucklowery/simplilearn-dockercoins/actions/workflows/ci.yaml/badge.svg?branch=docker)](https://github.com/chucklowery/simplilearn-dockercoins/actions/workflows/ci.yaml)
+[![Build & Test](https://github.com/chucklowery/simplilearn-dockercoins/actions/workflows/ci.yaml/badge.svg?branch=docker)](https://github.com/chucklowery/simplilearn-dockercoins/actions/workflows/ci.yaml)
 
 A set of applications to demonstrate microservices interacting within a docker enviroment.
 
