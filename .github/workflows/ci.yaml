@@ -51,5 +51,5 @@ jobs:
           while true
             do
               sleep 10
-              docker logs worker 2>& 1 | grep "Coin found" && break
+              docker logs worker 2>& 1 | grep "Work Up and running" && break
             done
