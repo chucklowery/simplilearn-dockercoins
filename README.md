@@ -23,7 +23,9 @@ The worker Service is responsible for talking with the RNG node, the Hasher Node
 ##### Needs
 - Python Enviroment (python:alpine)
 - Python Library: "requests" (HTTP Library)
-- Python Library: "redis" (redis drivery Library)
+- Python Library: "redis" (redis driver Library)
+##### Entrypoint
+worker.py
 
 #### Hasher
 The Hasher Service is responsible for taking in a seed and converting that seed into a hash. The service is written in Ruby.
@@ -33,13 +35,24 @@ The Hasher Service is responsible for taking in a seed and converting that seed 
 - System Library: build-base (needed to build Ruby Libraries)
 - Ruby Gem: "sinatra" (Webserver Library; requires thins as a dependancy)
 - Ruby Gem: "thin" (Webserver Library)
+##### Entrypoint
+- hasher.rb
 
 #### RNG
 The RNG Service is responsible for generating a random number for every request. It is written in Python and uses Flask as its webserver.
 ##### Needs
 - Python Enviroment (python:alpine)
 - Python Library: "flask" (Webserver Library)
+##### Entrypoint
+rng.py
 
-
+#### WebUI
+The WebUI Service is responsible for generating a user interface and http endpoints to provide that interface with data. The WebUI service is written in Javascript.
+##### Needs
+- NodeJS Enviroment (node:4-slim)
+- Node Library: "express" (Webserver Library)
+- Node Library: "redis" (redis driver Library)
+##### Entrypoint
+webui.js
 
 <img src="dockercoins-diagram.svg" width="800" align="left">
