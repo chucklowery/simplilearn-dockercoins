@@ -25,4 +25,4 @@
               docker network connect ${service} worker
             done
           
-          docker run --detach --name webui --network redis chucklowery/simplilearn-dockercoins:latest-webui-testing --publish 80:8080
+          docker run --publish 8080:8080 --detach --name webui --network redis chucklowery/simplilearn-dockercoins:latest-webui-testing 
