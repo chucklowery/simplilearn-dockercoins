@@ -1,4 +1,4 @@
 # simplilearn-dockercoins
 
 
-<img src="dockercoins-diagram.svg" width="600" align="left">
+<img src="dockercoins-diagram.svg" width="800" align="left">
