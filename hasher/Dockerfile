@@ -1,6 +1,6 @@
 FROM ruby:alpine
 
-RUN apk add build-base && gem install sinatra 
+RUN apk add build-base && gem install thin sinatra 
 
 # Copy the source code from the git repo into the Docker image
 COPY . .
