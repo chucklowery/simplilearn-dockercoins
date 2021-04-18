@@ -24,7 +24,7 @@ jobs:
           
           for service in hasher rng webui worker
             do
-              docker build --tag academiaonline/simplilearn-dockercoins:latest-${service}-testing ${service}
+              docker build --tag chucklowery/simplilearn-dockercoins:latest-${service}-testing ${service}
             done
 
           for service in hasher redis rng
@@ -37,16 +37,16 @@ jobs:
           
           for service in hasher rng
             do
-              docker run --detach --name ${service} --network ${service} academiaonline/simplilearn-dockercoins:latest-${service}-testing
+              docker run --detach --name ${service} --network ${service} chucklowery/simplilearn-dockercoins:latest-${service}-testing
             done
             
-          docker run --detach --name worker --network redis academiaonline/simplilearn-dockercoins:latest-worker-testing
+          docker run --detach --name worker --network redis chucklowery/simplilearn-dockercoins:latest-worker-testing
           for service in hasher rng
             do
               docker network connect ${service} worker
             done
           
-          docker run --detach --name webui --network redis academiaonline/simplilearn-dockercoins:latest-webui-testing
+          docker run --detach --name webui --network redis chucklowery/simplilearn-dockercoins:latest-webui-testing
 
           while true
             do
