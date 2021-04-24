@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+
+kind: ReplicaSet
+
+metadata:
+  name: hasher-rs
+  
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      redis: true
+  template: 
+    metadata:
+      labels: 
+        redis: true
+    spec: 
+      containers:
+        -
+          image: charleslowery/simplilearn-dockercoins:hasher-latest 
+          name: hasher-container
