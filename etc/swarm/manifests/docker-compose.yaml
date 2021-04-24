@@ -1,25 +1,78 @@
-versuin: "3.8"
+  
 networks:
+
   hasher:
     internal: true
   redis:
     internal: true
   rng:
     internal: true
-   
+    
+    
 services:
-  redis:
-    networks:
-      - redis
-    volumess:
-      - redis:/data
-    image: redis:alpine
+
+  hasher:
     deploy:
-      node: replicated
+      mode: replicated
       placement:
-        replicas: 1
         constraints:
           - node.role == worker
-   
+      replicas: 2
+    image: chucklowery/simplilearn/dockercoins:hasher-latest
+    networks:
+      - hasher
+          
+  redis:
+    deploy:
+      mode: replicated
+      placement:
+        constraints:
+          - node.role == worker
+      replicas: 1
+    image: redis:alpine
+    networks:
+      - redis
+    volumes:
+      - redis:/data
+          
+  rng:
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.role == worker
+    image: chucklowery/simplilearn/dockercoins:rng-latest
+    networks:
+      - rng
+          
+  webui:
+    deploy:
+      mode: replicated
+      placement:
+        constraints:
+          - node.role == worker
+      replicas: 2
+    image: chucklowery/simplilearn/dockercoins:webui-latest
+    networks:
+      - redis
+          
+  worker:
+    deploy:
+      mode: replicated
+      placement:
+        constraints:
+          - node.role == worker
+      replicas: 2
+    image: chucklowery/simplilearn/dockercoins:worker-latest
+    networks:
+      - hasher
+      - redis
+      - rng
+          
+          
+version: '3.8'
+
+
 volumes:
+
   redis:
