@@ -18,7 +18,7 @@ services:
         constraints:
           - node.role == worker
       replicas: 2
-    image: chucklowery/simplilearn/dockercoins:hasher-latest
+    image: charleslowery/simplilearn-dockercoins:hasher-latest
     networks:
       - hasher
           
@@ -41,7 +41,7 @@ services:
       placement:
         constraints:
           - node.role == worker
-    image: chucklowery/simplilearn/dockercoins:rng-latest
+    image: charleslowery/simplilearn-dockercoins:rng-latest
     networks:
       - rng
           
@@ -52,7 +52,7 @@ services:
         constraints:
           - node.role == worker
       replicas: 2
-    image: chucklowery/simplilearn/dockercoins:webui-latest
+    image: charleslowery/simplilearn-dockercoins:webui-latest
     networks:
       - redis
           
@@ -63,7 +63,7 @@ services:
         constraints:
           - node.role == worker
       replicas: 2
-    image: chucklowery/simplilearn/dockercoins:worker-latest
+    image: charleslowery/simplilearn-dockercoins:worker-latest
     networks:
       - hasher
       - redis
