@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+
+kind: ReplicaSet
+
+metadata:
+  name: webui-rs
+  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      webui: true
+  template: 
+    metadata:
+      labels: 
+        webui: true
+    spec: 
+      containers:
+        -
+          image: charleslowery/simplilearn-dockercoins:webui-latest 
+          name: webui-container
