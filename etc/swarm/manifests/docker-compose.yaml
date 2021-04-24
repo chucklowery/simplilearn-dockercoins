@@ -1,0 +1,25 @@
+versuin: "3.8"
+networks:
+  hasher:
+    internal: true
+  redis:
+    internal: true
+  rng:
+    internal: true
+   
+services:
+  redis:
+    networks:
+      - redis
+    volumess:
+      - redis:/data
+    image: redis:alpine
+    deploy:
+      node: replicated
+      placement:
+        replicas: 1
+        constraints:
+          - node.role == worker
+   
+volumes:
+  redis:
