@@ -9,11 +9,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      redis: true
+      hasher: true
   template: 
     metadata:
       labels: 
-        redis: true
+        hasher: true
     spec: 
       containers:
         -
