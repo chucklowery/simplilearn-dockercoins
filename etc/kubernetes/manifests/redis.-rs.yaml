@@ -9,11 +9,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      redis: true
+      application: "redis"
   template: 
     metadata:
       labels: 
-        redis: true
+        application: "redis"
     spec: 
       containers:
         -
