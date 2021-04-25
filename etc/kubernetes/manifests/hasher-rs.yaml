@@ -1,9 +1,9 @@
 apiVersion: apps/v1
-
 kind: ReplicaSet
-
 metadata:
   name: hasher-rs
+  enviroment: ruby
+  description: Produces a SHA2 hash given a integer seed
   
 spec:
   replicas: 2
@@ -16,6 +16,5 @@ spec:
         hasher: true
     spec: 
       containers:
-        -
-          image: charleslowery/simplilearn-dockercoins:hasher-latest 
+        - image: charleslowery/simplilearn-dockercoins:hasher-latest 
           name: hasher-container
