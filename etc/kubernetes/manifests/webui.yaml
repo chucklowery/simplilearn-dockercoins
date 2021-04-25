@@ -9,11 +9,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      webui: true
+      application: "webui"
   template: 
     metadata:
       labels: 
-        webui: true
+        application: "webui"
     spec: 
       containers:
         -
