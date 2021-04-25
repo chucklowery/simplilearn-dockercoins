@@ -8,12 +8,12 @@ spec:
   
   selector:
     matchLabels:
-      application: hasher-latest 
+      application: "hasher-latest" 
       
   template:
     metadata:
       labels: 
-        application: hasher-latest
+        application: "hasher-latest"
     spec: 
       containers:
         - image: charleslowery/simplilearn-dockercoins:hasher-latest 
