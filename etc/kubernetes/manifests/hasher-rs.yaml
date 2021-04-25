@@ -5,13 +5,15 @@ metadata:
   
 spec:
   replicas: 2
+  
   selector:
     matchLabels:
-      hasher: true
-  template: 
+      application: hasher-latest 
+      
+  template:
     metadata:
       labels: 
-        hasher: true
+        application: hasher-latest
     spec: 
       containers:
         - image: charleslowery/simplilearn-dockercoins:hasher-latest 
