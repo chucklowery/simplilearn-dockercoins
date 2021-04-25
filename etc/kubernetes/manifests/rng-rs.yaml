@@ -9,11 +9,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      rng: true
+      application: "rng"
   template: 
     metadata:
       labels: 
-        rng: true
+        application: "rng"
     spec: 
       containers:
         -
