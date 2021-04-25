@@ -18,3 +18,5 @@ spec:
       containers:
         - image: charleslowery/simplilearn-dockercoins:hasher-latest 
           name: hasher-container
+          ports:
+            - containerPort: 80
