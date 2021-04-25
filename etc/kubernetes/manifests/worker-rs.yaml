@@ -9,11 +9,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      worker: true
+      application: "worker"
   template: 
     metadata:
       labels: 
-        worker: true
+        application: "worker"
     spec: 
       containers:
         -
