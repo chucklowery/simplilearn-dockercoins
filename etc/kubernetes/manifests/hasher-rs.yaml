@@ -2,9 +2,6 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: hasher-rs
-  labels:
-    enviroment: ruby
-    description: Produces a SHA2 hash given a integer seed
   
 spec:
   replicas: 2
