@@ -19,3 +19,5 @@ spec:
         -
           image: charleslowery/simplilearn-dockercoins:webui-latest 
           name: webui-container
+          ports:
+            - containerPort: 8080
